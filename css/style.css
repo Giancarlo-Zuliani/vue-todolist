@@ -2,59 +2,62 @@
   box-sizing: border-box;
   margin:0;
   padding:0;
+  font-family: 'Reenie Beanie', cursive;
 }
+
 body{
   background-image: url('../resources/fridge.jpg');
-  background-position: center;
-  background-size: cover;
+  background-size:100%;
   background-repeat: no-repeat;
   height: 100%;
 }
 
-header{
-  width:100%;
-  background-color: lightgrey;
-  opacity: 0.4;
-  height:100px;
-  display: flex;
-  justify-content:center;
-  align-items: center;
-}
-
 main{
   width:50%;
-  margin:20px auto;
+  margin:20% auto 0 ;
   text-align: center;
-  background-color: aqua;
+  background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%);
+  opacity: .9;
   border-radius: 15px;
+  font-size: 28px;
 }
 
 main div{
-  width: 50%;
+  width: 80%;
   margin: auto;
   padding:5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom:solid black 2px;
+}
+i{
+  transition: transform linear .2s;
+}
+i:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.yellow{
+  color:yellow;
+}
+main input{
+  padding:3px;
+  border-radius: 15px;
+  font-size: 20px;
+  text-align:center;
+  width:80%;
+}
+
+main button{
+  background-color: yellow;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
 }
 
 main section{
   padding: 5px;
   margin-bottom: 10px;
-}
-
-.backcolor{
-  background-color: aqua;
-}
-
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
 }

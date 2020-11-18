@@ -2,8 +2,7 @@ const APP = new Vue({
   el:'#app',
   data:{
     todos : ['fare la cacca','fare schifo','comprare la robbba'],
-    newtodos:'',
-    show:true
+    newtodos:''
   },
   methods:{
     addTodo : function(){
