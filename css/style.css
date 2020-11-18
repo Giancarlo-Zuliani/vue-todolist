@@ -22,7 +22,6 @@ main{
 main div{
   width: 50%;
   margin: auto;
-  border-bottom: 2px lightgrey solid;
   padding:5px;
   display: flex;
   justify-content: space-between;
@@ -32,4 +31,8 @@ main div{
 main section{
   padding: 5px;
   margin-bottom: 10px;
+}
+
+.backcolor{
+  background-color: aqua;
 }
