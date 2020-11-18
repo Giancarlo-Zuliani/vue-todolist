@@ -7,6 +7,9 @@ const APP = new Vue({
   methods:{
     addTodo : function(){
       this.todos.push(this.newtodos)
+    },
+    removeTodo : function(i){
+      this.todos.splice(i,1);
     }
   }
 })

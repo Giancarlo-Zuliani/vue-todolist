@@ -18,7 +18,7 @@
       <button type="button" name="button" @click='addTodo'>Add</button>
       <div class="" v-for='(ele,i) in todos'>
         <span>{{todos[i]}}</span>
-        <i class="far fa-trash-alt" @click='console.log(i)'></i>
+        <i class="far fa-trash-alt" @click='removeTodo(i)'></i>
       </div>
     </main>
 
