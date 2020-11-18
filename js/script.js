@@ -10,8 +10,8 @@ const APP = new Vue({
         alert('new todo not valid or already inlist')
       }else{
         this.todos.push(this.newtodos)
-        this.newtodos = ''
-      };
+      }
+      this.newtodos = ''
     },
     removeTodo : function(i){
       this.todos.splice(i,1);
