@@ -66,3 +66,30 @@ button:hover{
   transform: scale(1.2);
   cursor: pointer;
 }
+
+.list-enter-active {
+  animation: add-item 1s;
+}
+
+.list-leave-active {
+  position: absolute;
+  animation: add-item 1s reverse;
+}
+
+.list-move {
+  transition: transform 1s;
+}
+@keyframes add-item {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-10px) skewX(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

@@ -18,14 +18,13 @@
         <button type="button" @click='addTodo'>Add</button>
       </section>
 
-      <transition v-for='(ele,i) in todos' name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+        <transition-group  tag='ul' name='list'>
+          <li class="container" v-for='(ele,i) in todos' v-bind:key ='ele' >
+            <span >{{i+1}}  {{todos[i]}}</span>
+            <i class="far fa-trash-alt" @click='removeTodo(i)'></i>
+          </li>
+        </transition-group>
 
-        <div v-if='show' class="container"  >
-        <span >{{i+1}}  {{todos[i]}}</span>
-        <i class="far fa-trash-alt" @click='removeTodo(i)'></i>
-      </div>
-
-    </transition>
     </main>
 
 
