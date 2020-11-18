@@ -10,13 +10,15 @@
   <body>
 
     <header>
-
+      <h1>TODOS</h1>
     </header>
 
     <main id="app">
-      <input type="text" name="" placeholder="new todos" v-model ='newtodos' @keyup.enter='addTodo' value="">
-      <button type="button" name="button" @click='addTodo'>Add</button>
-      <div class="" v-for='(ele,i) in todos'>
+      <section>
+        <input type="text" placeholder="new todos" v-model ='newtodos' @keyup.enter='addTodo'>
+        <button type="button" @click='addTodo'>Add</button>
+      </section>
+      <div v-for='(ele,i) in todos'>
         <span>{{todos[i]}}</span>
         <i class="far fa-trash-alt" @click='removeTodo(i)'></i>
       </div>

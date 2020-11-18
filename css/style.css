@@ -3,3 +3,33 @@
   margin:0;
   padding:0;
 }
+
+header{
+  width:100%;
+  background-color: lightgrey;
+  height:100px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+main{
+  width:50%;
+  margin:20px auto;
+  text-align: center;
+}
+
+main div{
+  width: 50%;
+  margin: auto;
+  border-bottom: 2px lightgrey solid;
+  padding:5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main section{
+  padding: 5px;
+  margin-bottom: 10px;
+}
