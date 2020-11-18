@@ -20,9 +20,10 @@ main{
   opacity: .9;
   border-radius: 15px;
   font-size: 28px;
+  padding: 15px;
 }
 
-main div{
+.container{
   width: 80%;
   margin: auto;
   padding:5px;
@@ -38,9 +39,7 @@ i:hover{
   cursor: pointer;
   transform: scale(1.2);
 }
-.yellow{
-  color:yellow;
-}
+
 main input{
   padding:3px;
   border-radius: 15px;
@@ -50,14 +49,20 @@ main input{
 }
 
 main button{
-  background-color: yellow;
+  background-color: aqua;
   padding: 5px 15px;
   border-radius: 5px;
   font-size: 18px;
   border: none;
+  transition: transform linear .2s;
 }
 
 main section{
   padding: 5px;
   margin-bottom: 10px;
+}
+
+button:hover{
+  transform: scale(1.2);
+  cursor: pointer;
 }
