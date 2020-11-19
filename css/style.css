@@ -60,7 +60,23 @@ main section{
 i{
   transition: transform linear .2s;
 }
+/* MOVE ARROW */
+#movearrow{
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+  align-items:center;
+  justify-content: center;
+}
 
+#command{
+  display: flex;
+  align-items: center;
+}
+
+.disabled{
+  opacity:.5;
+}
 /* POPUP */
 .popup{
   position:absolute;

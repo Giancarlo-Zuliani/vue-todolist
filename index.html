@@ -32,9 +32,15 @@
         <!-- TODOS LIST -->
         <h2 v-if='todos.length < 1'>DAY OFF!!!</h2>
         <transition-group  tag='ul' name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
-          <li class="container" v-for='(ele,i) in todos' v-bind:key ='ele' >
-            <span >{{i+1}} : {{ele}}</span>
+          <li class="container" v-for='(ele,i) in todos' v-bind:key ='i' >
+            <span>{{i+1}} : {{ele}}</span>
+            <div id="command">
+              <div id="movearrow">
+                <i class="fas fa-caret-up" :class='{disabled: i === 0}' @click='moveUp(i)' ></i>
+                <i class="fas fa-sort-down" :class ='{disabled: i === (todos.length-1)}'@click='moveDown(i)'></i>
+              </div>
             <i class="far fa-trash-alt" @click='removeTodo(i)'></i>
+          </div>
           </li>
         </transition-group>
 

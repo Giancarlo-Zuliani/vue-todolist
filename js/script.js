@@ -19,6 +19,22 @@ const APP = new Vue({
     },
     togglePopUp : function(){
       this.show = false;
+    },
+    moveUp :function(i){
+      if(i > 0){
+        var prov = this.todos[i];
+        this.todos[i]= this.todos[i-1];
+        this.todos[i-1] = prov;
+        APP.$forceUpdate()
+      }
+    },
+    moveDown:function(i){
+      if(i<(this.todos.length-1)){
+        let prov = this.todos[i];
+        this.todos[i]= this.todos[i+1];
+        this.todos[i+1] = prov;
+        APP.$forceUpdate()
+      }
     }
   }
 })
