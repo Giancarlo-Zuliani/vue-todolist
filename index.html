@@ -3,7 +3,7 @@
   <head>
     <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -13,20 +13,31 @@
   <body>
 
     <main id="app">
+
+      <transition name='bounce' tag='div' >
+
+        <div class="popup" v-if='show'>
+          <h4>to do already exist or invalid</h4>
+          <button type="button" name="button" @click='togglePopUp'>ok!</button>
+        </div>
+
+      </transition>
+
       <section>
         <input type="text" placeholder="new todo" v-model ='newtodos' @keyup.enter='addTodo'>
         <button type="button" @click='addTodo'>Add</button>
       </section>
 
         <transition-group  tag='ul' name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+
           <li class="container" v-for='(ele,i) in todos' v-bind:key ='ele' >
-            <span >{{i+1}}  {{todos[i]}}</span>
+            <span >{{i+1}} : {{ele}}</span>
             <i class="far fa-trash-alt" @click='removeTodo(i)'></i>
           </li>
+
         </transition-group>
 
     </main>
-
 
     <script src="js/script.js" charset="utf-8"></script>
   </body>

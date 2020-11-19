@@ -1,14 +1,14 @@
 const APP = new Vue({
   el:'#app',
   data:{
-    todos : ['fare la cacca','fare schifo','comprare la robbba','rapinare vecchiette','prostituirsi'],
+    todos : ['fare la spesa','fare schifo','comprare la robbba'],
     newtodos:'',
-    show:true
+    show:false
   },
   methods:{
     addTodo : function(){
       if(this.newtodos==='' || this.todos.includes(this.newtodos)){
-        alert('new todo not valid or already inlist')
+        this.show = true;
       }else{
         this.todos.push(this.newtodos)
       }
@@ -16,6 +16,9 @@ const APP = new Vue({
     },
     removeTodo : function(i){
       this.todos.splice(i,1);
+    },
+    togglePopUp : function(){
+      this.show = false;
     }
   }
 })
