@@ -32,7 +32,7 @@
         <!-- TODOS LIST -->
         <h2 v-if='todos.length < 1'>DAY OFF!!!</h2>
         <transition-group  tag='ul' name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
-          <li class="container" v-for='(ele,i) in todos' v-bind:key ='i' >
+          <li class="container" v-for='(ele,i) in todos' v-bind:key ='ele' >
             <span>{{i+1}} : {{ele}}</span>
             <div id="command">
               <div id="movearrow">
