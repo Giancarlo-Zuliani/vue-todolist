@@ -8,7 +8,7 @@ const APP = new Vue({
   },
   methods:{
     addTodo : function(){
-      if(this.newtodos==='' || this.todos.includes(this.newtodos)){
+      if(this.newtodos==='' || this.todos.filter(item => item.todo === this.newtodos).length > 0){
         this.show = true;
       }else{
         let newtodo ={};
