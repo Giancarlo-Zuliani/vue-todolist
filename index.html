@@ -14,31 +14,32 @@
 
     <main id="app">
 
-      <transition name='bounce' tag='div' >
 
+      <!-- POP UP -->
+      <transition name='bounce' tag='div' >
         <div class="popup" v-if='show'>
-          <h4>to do already exist or invalid</h4>
+          <h4>TO DO ALREADY EXIST OR INVALID</h4>
           <button type="button" name="button" @click='togglePopUp'>ok!</button>
         </div>
-
       </transition>
 
+      <!-- TEXT INPUT AND ADD BUTTON -->
       <section>
         <input type="text" placeholder="new todo" v-model ='newtodos' @keyup.enter='addTodo'>
         <button type="button" @click='addTodo'>Add</button>
       </section>
 
+        <!-- TODOS LIST -->
         <transition-group  tag='ul' name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
-
           <li class="container" v-for='(ele,i) in todos' v-bind:key ='ele' >
             <span >{{i+1}} : {{ele}}</span>
             <i class="far fa-trash-alt" @click='removeTodo(i)'></i>
           </li>
-
         </transition-group>
 
     </main>
 
+    <!-- SCRIPT -->
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
