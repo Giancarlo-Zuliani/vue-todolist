@@ -15,8 +15,7 @@
 
     <main id="app">
 
-
-      <!-- POP UP -->
+      <!-- ERROR POP UP -->
       <transition name='bounce'>
         <div class="popup" v-if='show'>
           <h4>TO DO ALREADY EXIST OR INVALID</h4>
@@ -31,20 +30,28 @@
       </section>
 
         <!-- TODOS LIST -->
+          <!--THIS WILL SHOW UP WHEN NO TODOS ARE LISTED-->
         <h2 v-if='todos.length < 1'>DAY OFF!!!</h2>
+        <!-- TRANSITION WRAP TAGGED AS UNORDERED LIST -->
         <transition-group  tag='ul' name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+          <!-- CONTAINER -->
           <li class="container" v-for='(ele,i) in todos' v-bind:key ='ele'>
+            <!-- TEXT INPUT FOR CHANGE TEXT -->
             <input v-model='modified' type="text" @keyup.enter='modTodo(i)' v-if='ele.textarea'>
-            <span v-if='ele.textarea===false' @dblclick='text(i)'>{{i+1}} : {{ele.todo}}</span>
+            <span v-if='ele.textarea===false' @dblclick='modText(i)'>{{i+1}} : {{ele.todo}}</span>
+
             <div id="command">
+              <!-- MOVE UP/MOVE DOWN BUTTONS-->
               <div id="movearrow">
                 <i class="fas fa-caret-up" :class='{disabled: i === 0}' @click='moveUp(i)' ></i>
                 <i class="fas fa-sort-down" :class ='{disabled: i === (todos.length-1)}'@click='moveDown(i)'></i>
               </div>
-            <i class="far fa-trash-alt" @click='removeTodo(i)'></i>
-          </div>
+              <!-- REMOVE BUTTON-->
+              <i class="far fa-trash-alt" @click='removeTodo(i)'></i>
+            </div>
           </li>
         </transition-group>
+        <!-- change text instruction -->
         <h4 v-if='todos.length > 0'><strong>DOUBLE CLICK ON TODOS FOR EDIT</strong> </h4>
 
     </main>
@@ -53,6 +60,7 @@
     <div class="githubbutton">
       <a class="github-button" href="https://github.com/Giancarlo-Zuliani" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" data-show-count="true" aria-label="Follow @Giancarlo-Zuliani on GitHub">Follow @Giancarlo-Zuliani</a>
     </div>
+
     <!-- SCRIPT -->
     <script src="js/script.js" charset="utf-8"></script>
   </body>

@@ -7,7 +7,8 @@ const APP = new Vue({
     modified:''
   },
   methods:{
-    addTodo : function(){
+
+    addTodo(){
       if(this.newtodos==='' || this.todos.filter(item => item.todo === this.newtodos).length > 0){
         this.show = true;
       }else{
@@ -18,13 +19,16 @@ const APP = new Vue({
       }
       this.newtodos = ''
     },
-    removeTodo : function(i){
+
+    removeTodo(i){
       this.todos.splice(i,1);
     },
-    togglePopUp : function(){
+
+    togglePopUp(){
       this.show = false;
     },
-    moveUp :function(i){
+
+    moveUp(i){
       if(i > 0){
         let prov = this.todos[i];
         this.todos[i]= this.todos[i-1];
@@ -32,7 +36,8 @@ const APP = new Vue({
         APP.$forceUpdate()
       }
     },
-    moveDown:function(i){
+
+    moveDown(i){
       if(i<(this.todos.length-1)){
         let prov = this.todos[i];
         this.todos[i]= this.todos[i+1];
@@ -40,11 +45,13 @@ const APP = new Vue({
         APP.$forceUpdate()
       }
     },
-    text:function(i){
+
+    modText(i){
       this.todos[i].textarea = true;
         APP.$forceUpdate()
     },
-    modTodo:function(i){
+
+    modTodo(i){
       let newtodo={};
       newtodo.todo = this.modified;
       newtodo.textarea= false;
@@ -53,4 +60,4 @@ const APP = new Vue({
       APP.$forceUpdate()
     }
   }
-})
+});
