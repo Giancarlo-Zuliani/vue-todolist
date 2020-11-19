@@ -1,7 +1,7 @@
 const APP = new Vue({
   el:'#app',
   data:{
-    todos : [{todo:'fare la spesa',textarea:false},{todo:'fare schifo',textarea:false},{todo:'comprare la robbba',textarea:false}],
+    todos : [{todo:'eat',textarea:false},{todo:'sleep',textarea:false},{todo:'rave',textarea:false},{todo:'repeat',textarea:false}],
     newtodos:'',
     show:false,
     modified:''
@@ -26,7 +26,7 @@ const APP = new Vue({
     },
     moveUp :function(i){
       if(i > 0){
-        var prov = this.todos[i];
+        let prov = this.todos[i];
         this.todos[i]= this.todos[i-1];
         this.todos[i-1] = prov;
         APP.$forceUpdate()
