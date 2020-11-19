@@ -1,16 +1,20 @@
 const APP = new Vue({
   el:'#app',
   data:{
-    todos : ['fare la spesa','fare schifo','comprare la robbba'],
+    todos : [{todo:'fare la spesa',textarea:false},{todo:'fare schifo',textarea:false},{todo:'comprare la robbba',textarea:false}],
     newtodos:'',
-    show:false
+    show:false,
+    modified:''
   },
   methods:{
     addTodo : function(){
       if(this.newtodos==='' || this.todos.includes(this.newtodos)){
         this.show = true;
       }else{
-        this.todos.push(this.newtodos)
+        let newtodo ={};
+        newtodo.todo=this.newtodos;
+        newtodo.textarea= false
+        this.todos.push(newtodo)
       }
       this.newtodos = ''
     },
@@ -35,6 +39,18 @@ const APP = new Vue({
         this.todos[i+1] = prov;
         APP.$forceUpdate()
       }
+    },
+    text:function(i){
+      this.todos[i].textarea = true;
+        APP.$forceUpdate()
+    },
+    modTodo:function(i){
+      let newtodo={};
+      newtodo.todo = this.modified;
+      newtodo.textarea= false;
+      this.todos[i]=newtodo;
+      this.modified='';
+      APP.$forceUpdate()
     }
   }
 })
