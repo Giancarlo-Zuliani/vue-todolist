@@ -38,7 +38,7 @@
         <li class="container" v-for='(ele,i) in todos' v-bind:key ='ele'>
           <!-- TEXT INPUT FOR CHANGE TEXT -->
           <input v-if='ele.textarea' v-model='modified' type="text" @keyup.enter='modTodo(i)'>
-          <span v-if='ele.textarea===false' @dblclick='modText(i)'>{{i+1}} : {{ele.todo}}</span>
+          <span v-if='!ele.textarea' @dblclick='modText(i)'>{{i+1}} : {{ele.todo}}</span>
           <div id="command">
             <!-- MOVE UP/MOVE DOWN BUTTONS-->
             <div id="movearrow">
